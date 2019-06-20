@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nxx-n1-UgL">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Giphy Search-->
+        <scene sceneID="KNd-Oh-ebO">
+            <objects>
+                <viewController id="ysO-XK-Uyk" customClass="GiphyViewController" customModule="GiphyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pDf-h8-Boj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ls6-NG-7Rc">
+                                <rect key="frame" x="10" y="130" width="355" height="527"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="c4u-a3-EcY">
+                                    <size key="itemSize" width="118" height="117"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="giphyCell" id="2Mi-rI-jKw" customClass="GiphyCollectionViewCell" customModule="GiphySearch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="118" height="117"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="118" height="117"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OFx-7E-g6Y">
+                                                    <rect key="frame" x="0.0" y="0.0" width="118" height="117"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="OFx-7E-g6Y" secondAttribute="trailing" id="8If-Et-Xvc"/>
+                                            <constraint firstItem="OFx-7E-g6Y" firstAttribute="leading" secondItem="2Mi-rI-jKw" secondAttribute="leading" id="Wbt-LU-ZVq"/>
+                                            <constraint firstAttribute="bottom" secondItem="OFx-7E-g6Y" secondAttribute="bottom" id="h9W-5N-shZ"/>
+                                            <constraint firstItem="OFx-7E-g6Y" firstAttribute="top" secondItem="2Mi-rI-jKw" secondAttribute="top" id="wq9-CU-dNt"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="ysO-XK-Uyk" id="5lG-ps-4mT"/>
+                                    <outlet property="delegate" destination="ysO-XK-Uyk" id="J6b-lv-c9W"/>
+                                </connections>
+                            </collectionView>
+                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="ncW-sk-9a2">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="ysO-XK-Uyk" id="pvU-jo-9C8"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ncW-sk-9a2" firstAttribute="top" secondItem="wQ7-lE-0sf" secondAttribute="top" id="8KF-A1-m4F"/>
+                            <constraint firstItem="wQ7-lE-0sf" firstAttribute="bottom" secondItem="Ls6-NG-7Rc" secondAttribute="bottom" constant="10" id="9cV-JL-4Nv"/>
+                            <constraint firstItem="Ls6-NG-7Rc" firstAttribute="leading" secondItem="wQ7-lE-0sf" secondAttribute="leading" constant="10" id="GsM-iN-0jB"/>
+                            <constraint firstItem="Ls6-NG-7Rc" firstAttribute="top" secondItem="ncW-sk-9a2" secondAttribute="bottom" constant="10" id="UFq-a1-wbQ"/>
+                            <constraint firstAttribute="trailing" secondItem="ncW-sk-9a2" secondAttribute="trailing" id="cZ5-uD-bkR"/>
+                            <constraint firstItem="ncW-sk-9a2" firstAttribute="leading" secondItem="wQ7-lE-0sf" secondAttribute="leading" id="gIg-iV-g0k"/>
+                            <constraint firstItem="wQ7-lE-0sf" firstAttribute="trailing" secondItem="Ls6-NG-7Rc" secondAttribute="trailing" constant="10" id="wgk-q8-fxg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wQ7-lE-0sf"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Giphy Search" id="JqH-Nr-9VY"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Ls6-NG-7Rc" id="pcc-pH-h5A"/>
+                        <outlet property="searchBar" destination="ncW-sk-9a2" id="Xfr-pj-caK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O6W-pg-RZW" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1578" y="346"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0K3-AK-bvV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nxx-n1-UgL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KGd-QT-dNY">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ysO-XK-Uyk" kind="relationship" relationship="rootViewController" id="AdY-Ti-pLz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FVH-FO-9hQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="704.79999999999995" y="417.8410794602699"/>
+        </scene>
+    </scenes>
+</document>
