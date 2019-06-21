@@ -6,10 +6,10 @@
 //  Copyright © 2019 appxone. All rights reserved.
 //
 import Foundation
-import GiphyCoreSDK
+
 protocol  GifDelegate: class {
     
-    func gifaSuccess()
+    func gifsSuccess()
     func gifsFailure(errorMessage: String)
     
 }
@@ -20,35 +20,34 @@ class GifViewModel {
     init(delegate: GifDelegate) {
         self.delegate = delegate
     }
-    func getGifs(searchText: String, offset: Int) {
-       
-        Providers.authProvider.request(.login(userEmail: userEmail, password: password)) { (
-            moyaResponse) in
-            switch moyaResponse {
-                
-            case let .success(moyaResponse):
-                let jsonDict = JSON.init(moyaResponse.data)
-                
-                if  moyaResponse.statusCode == 200 {
-                    let loginResponse = LoginResponse(json: jsonDict)
-                    CurrentUser.shared =   loginResponse.user
-                    CurrentUser.settings = loginResponse.settings
-                    CurrentUser.accessToken = loginResponse.accesstoken
-                    if let str = CurrentUser.shared?.completed?.replacingOccurrences(of: "%", with: "") {
-                        CurrentUser.completeness = str.floatValue
-                    }
-                    self.delegate?.loginSuccess()
-                }
-                else {
-                    self.delegate?.loginFailure(errorMessage: jsonDict["error"]["message"].string ?? "Error in signing in, Please try again".localized() )
-                }
-                
-                
-                
-            case let .failure(error):
-                self.delegate?.loginFailure(errorMessage: error.localizedDescription)
-            }
-        }
-    }
+	var gifList : [GIF]?
+
+	func getGifs(searchText: String, offset: Int, limit: Int)  {
+		Providers.gifProvider.request(.getGifs(searchText: searchText, offset: offset, limit: limit)) { [weak self] (moyaResponse) in
+			do {
+				let gifList: [GIF] = try moyaResponse.decoded()
+				self?.gifList = gifList
+				//self?.gifList?.append(contentsOf: gifList)
+				self?.delegate?.gifsSuccess()
+
+			} catch {
+				self?.delegate?.gifsFailure(errorMessage: error.localizedDescription)
+			}
+
+//			switch moyaResponse {
+//			case let .success(moyaResponse):
+//
+//				if let responseDict = moyaResponse
+//				//let gifList: [GIF] = try moyaResponse.decoded()
+//
+//			case let .failure(error):
+//				self.delegate?.gifsFailure(errorMessage: error.localizedDescription)
+//			}
+
+
+		}
+	}
+
+
 }
 

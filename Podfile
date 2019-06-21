@@ -7,7 +7,8 @@ target 'GiphyApp' do
 
   # Pods for GiphyApp
 pod 'Moya', '~> 13.0'
-
+pod 'SDWebImage', '~> 5.0'
+pod 'SwiftyGif', '~> 5.0.1'
   target 'GiphyAppTests' do
     inherit! :search_paths
     # Pods for testing

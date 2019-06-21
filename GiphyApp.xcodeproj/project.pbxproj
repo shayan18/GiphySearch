@@ -10,7 +10,12 @@
 		0EBE6EE57601AA9BDE623F6A /* Pods_GiphyAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2828826C36971B750743F495 /* Pods_GiphyAppTests.framework */; };
 		3BB37E29DF9EC2B9CF8BD255 /* Pods_GiphyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 857874B35C382DFEC249B4D1 /* Pods_GiphyApp.framework */; };
 		9224C33B24A1414C754AF076 /* Pods_GiphyAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 557918F53FB1780651A7149C /* Pods_GiphyAppUITests.framework */; };
-		E406DE6E22BC3D51000C7454 /* GithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406DE6D22BC3D51000C7454 /* GithubService.swift */; };
+		B7724E5C22BD0FE800489E16 /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7724E5B22BD0FE800489E16 /* Gif.swift */; };
+		B7724E5E22BD119700489E16 /* Extension+Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7724E5D22BD119700489E16 /* Extension+Result.swift */; };
+		B7724E6022BD18BD00489E16 /* GiphyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7724E5F22BD18BD00489E16 /* GiphyDataSource.swift */; };
+		B7724E6422BD20B100489E16 /* SwiftGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7724E6322BD20B100489E16 /* SwiftGif.swift */; };
+		B7D2A39C22BCFDB60076E302 /* Providers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D2A39B22BCFDB60076E302 /* Providers.swift */; };
+		E406DE6E22BC3D51000C7454 /* GifService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406DE6D22BC3D51000C7454 /* GifService.swift */; };
 		E4FC559E22B998840094B953 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FC559D22B998840094B953 /* AppDelegate.swift */; };
 		E4FC55A322B998840094B953 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4FC55A122B998840094B953 /* Main.storyboard */; };
 		E4FC55A522B998890094B953 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4FC55A422B998890094B953 /* Assets.xcassets */; };
@@ -21,7 +26,6 @@
 		E4FC55CE22B9994C0094B953 /* GiphyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FC55CD22B9994C0094B953 /* GiphyViewController.swift */; };
 		E4FC55D022B999560094B953 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FC55CF22B999550094B953 /* Constant.swift */; };
 		E4FC55D222B99B650094B953 /* GifViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FC55D122B99B650094B953 /* GifViewModel.swift */; };
-		E4FC55D422B99C620094B953 /* VPAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FC55D322B99C620094B953 /* VPAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +53,13 @@
 		916C9171BF6F155D596EB9C2 /* Pods-GiphyAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiphyAppTests.release.xcconfig"; path = "Target Support Files/Pods-GiphyAppTests/Pods-GiphyAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		93B9D527C3F8F825234C6948 /* Pods-GiphyAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiphyAppTests.debug.xcconfig"; path = "Target Support Files/Pods-GiphyAppTests/Pods-GiphyAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AF4BC9CB9D031C6824FDFCD6 /* Pods-GiphyAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiphyAppUITests.release.xcconfig"; path = "Target Support Files/Pods-GiphyAppUITests/Pods-GiphyAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B7724E5B22BD0FE800489E16 /* Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gif.swift; sourceTree = "<group>"; };
+		B7724E5D22BD119700489E16 /* Extension+Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Result.swift"; sourceTree = "<group>"; };
+		B7724E5F22BD18BD00489E16 /* GiphyDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyDataSource.swift; sourceTree = "<group>"; };
+		B7724E6322BD20B100489E16 /* SwiftGif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftGif.swift; sourceTree = "<group>"; };
+		B7D2A39B22BCFDB60076E302 /* Providers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Providers.swift; sourceTree = "<group>"; };
 		B84D9738BA7873BA7F9FADDE /* Pods-GiphyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiphyApp.debug.xcconfig"; path = "Target Support Files/Pods-GiphyApp/Pods-GiphyApp.debug.xcconfig"; sourceTree = "<group>"; };
-		E406DE6D22BC3D51000C7454 /* GithubService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubService.swift; sourceTree = "<group>"; };
+		E406DE6D22BC3D51000C7454 /* GifService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifService.swift; sourceTree = "<group>"; };
 		E4FC559A22B998840094B953 /* GiphyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiphyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4FC559D22B998840094B953 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4FC55A222B998840094B953 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -67,7 +76,6 @@
 		E4FC55CD22B9994C0094B953 /* GiphyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiphyViewController.swift; sourceTree = "<group>"; };
 		E4FC55CF22B999550094B953 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		E4FC55D122B99B650094B953 /* GifViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifViewModel.swift; sourceTree = "<group>"; };
-		E4FC55D322B99C620094B953 /* VPAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPAPI.swift; sourceTree = "<group>"; };
 		EB1D7510AB1EA22D3EEB89D5 /* Pods-GiphyAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiphyAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-GiphyAppUITests/Pods-GiphyAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,12 +157,16 @@
 			children = (
 				E4FC559D22B998840094B953 /* AppDelegate.swift */,
 				E4FC55A122B998840094B953 /* Main.storyboard */,
-				E4FC55D122B99B650094B953 /* GifViewModel.swift */,
 				E4FC55CD22B9994C0094B953 /* GiphyViewController.swift */,
+				B7724E5F22BD18BD00489E16 /* GiphyDataSource.swift */,
 				E4FC55CB22B999440094B953 /* GiphyCollectionViewCell.swift */,
-				E4FC55D322B99C620094B953 /* VPAPI.swift */,
-				E406DE6D22BC3D51000C7454 /* GithubService.swift */,
+				B7D2A39B22BCFDB60076E302 /* Providers.swift */,
+				E4FC55D122B99B650094B953 /* GifViewModel.swift */,
+				E406DE6D22BC3D51000C7454 /* GifService.swift */,
 				E4FC55CF22B999550094B953 /* Constant.swift */,
+				B7724E5B22BD0FE800489E16 /* Gif.swift */,
+				B7724E6322BD20B100489E16 /* SwiftGif.swift */,
+				B7724E5D22BD119700489E16 /* Extension+Result.swift */,
 				E4FC55A422B998890094B953 /* Assets.xcassets */,
 				E4FC55A622B998890094B953 /* LaunchScreen.storyboard */,
 				E4FC55A922B998890094B953 /* Info.plist */,
@@ -389,6 +401,8 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyGif/SwiftyGif.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -397,6 +411,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyGif.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -410,10 +426,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4FC55D422B99C620094B953 /* VPAPI.swift in Sources */,
+				B7724E6422BD20B100489E16 /* SwiftGif.swift in Sources */,
+				B7D2A39C22BCFDB60076E302 /* Providers.swift in Sources */,
 				E4FC55CC22B999440094B953 /* GiphyCollectionViewCell.swift in Sources */,
+				B7724E5C22BD0FE800489E16 /* Gif.swift in Sources */,
+				B7724E5E22BD119700489E16 /* Extension+Result.swift in Sources */,
 				E4FC55D222B99B650094B953 /* GifViewModel.swift in Sources */,
-				E406DE6E22BC3D51000C7454 /* GithubService.swift in Sources */,
+				E406DE6E22BC3D51000C7454 /* GifService.swift in Sources */,
+				B7724E6022BD18BD00489E16 /* GiphyDataSource.swift in Sources */,
 				E4FC559E22B998840094B953 /* AppDelegate.swift in Sources */,
 				E4FC55CE22B9994C0094B953 /* GiphyViewController.swift in Sources */,
 				E4FC55D022B999560094B953 /* Constant.swift in Sources */,

@@ -8,38 +8,56 @@
 
 import UIKit
 class GiphyViewController: UIViewController {
-    @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak private var searchBar: UISearchBar!
+    @IBOutlet weak private var collectionView: UICollectionView!
 
+	private lazy var gifViewModel = GifViewModel(delegate: self)
+	private let gifDataSource = GiphyDataSource()
 	override func viewDidLoad() {
 		super.viewDidLoad()
-        
-//    "http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=YOUR_API_KEY&limit=5"
+		self.collectionView.dataSource = gifDataSource
+	}
+
+	private func fetchGifs(searchText: String) {
+		gifViewModel.getGifs(searchText: searchText, offset: Constants.offset, limit: Constants.limit)
 
 	}
+	
+
 }
 
-extension GiphyViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension GiphyViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
-	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return 5
-	}
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		let singleItemWidth = ((collectionView.frame.size.width)/2)-10
+		return CGSize(width: singleItemWidth, height: singleItemWidth)
 
-		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifiers.giphyCell, for: indexPath) as? GiphyCollectionViewCell else {return UICollectionViewCell()}
-
-		return cell
 	}
 
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
 	}
+
 }
+
 
 
 extension GiphyViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-    }
+		fetchGifs(searchText: searchBar.text!)
+	}
+}
+
+extension GiphyViewController: GifDelegate {
+	func gifsSuccess() {
+		guard let gifList = gifViewModel.gifList else {return}
+
+		gifDataSource.gifList = gifList
+		collectionView.reloadData()
+		self.view.endEditing(true)
+	}
+	func gifsFailure(errorMessage: String) {
+		print(errorMessage)
+	}
 }

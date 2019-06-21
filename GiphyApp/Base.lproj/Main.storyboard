@@ -28,7 +28,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="giphyCell" id="2Mi-rI-jKw" customClass="GiphyCollectionViewCell" customModule="GiphySearch" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="giphyCell" id="2Mi-rI-jKw" customClass="GiphyCollectionViewCell" customModule="GiphyApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="118" height="117"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -38,14 +38,30 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OFx-7E-g6Y">
                                                     <rect key="frame" x="0.0" y="0.0" width="118" height="117"/>
                                                 </imageView>
+                                                <wkWebView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kqy-rX-FVD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="118" height="117"/>
+                                                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <wkWebViewConfiguration key="configuration">
+                                                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                                        <wkPreferences key="preferences"/>
+                                                    </wkWebViewConfiguration>
+                                                </wkWebView>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="OFx-7E-g6Y" secondAttribute="trailing" id="8If-Et-Xvc"/>
+                                            <constraint firstAttribute="bottom" secondItem="Kqy-rX-FVD" secondAttribute="bottom" id="HdC-zo-Re4"/>
+                                            <constraint firstAttribute="trailing" secondItem="Kqy-rX-FVD" secondAttribute="trailing" id="Mk6-nX-sZy"/>
+                                            <constraint firstItem="Kqy-rX-FVD" firstAttribute="top" secondItem="2Mi-rI-jKw" secondAttribute="top" id="T9c-10-Udv"/>
                                             <constraint firstItem="OFx-7E-g6Y" firstAttribute="leading" secondItem="2Mi-rI-jKw" secondAttribute="leading" id="Wbt-LU-ZVq"/>
                                             <constraint firstAttribute="bottom" secondItem="OFx-7E-g6Y" secondAttribute="bottom" id="h9W-5N-shZ"/>
+                                            <constraint firstItem="Kqy-rX-FVD" firstAttribute="leading" secondItem="2Mi-rI-jKw" secondAttribute="leading" id="llI-Sx-MO7"/>
                                             <constraint firstItem="OFx-7E-g6Y" firstAttribute="top" secondItem="2Mi-rI-jKw" secondAttribute="top" id="wq9-CU-dNt"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="gifImageView" destination="OFx-7E-g6Y" id="pKx-dg-PuC"/>
+                                            <outlet property="webView" destination="Kqy-rX-FVD" id="cDM-HI-g3z"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -53,7 +69,7 @@
                                     <outlet property="delegate" destination="ysO-XK-Uyk" id="J6b-lv-c9W"/>
                                 </connections>
                             </collectionView>
-                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="ncW-sk-9a2">
+                            <searchBar contentMode="redraw" placeholder="Search" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ncW-sk-9a2">
                                 <rect key="frame" x="0.0" y="64" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
