@@ -10,11 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GiphyApp/GiphyViewController.swift"
-            timestampString = "582589142.5391181"
+            timestampString = "583010054.989421"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47">
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "searchBarSearchButtonClicked(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

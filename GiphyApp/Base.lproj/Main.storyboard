@@ -21,7 +21,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ls6-NG-7Rc">
                                 <rect key="frame" x="10" y="130" width="355" height="527"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="c4u-a3-EcY">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="c4u-a3-EcY">
                                     <size key="itemSize" width="118" height="117"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -35,32 +35,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="118" height="117"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OFx-7E-g6Y">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OFx-7E-g6Y" customClass="FLAnimatedImageView">
                                                     <rect key="frame" x="0.0" y="0.0" width="118" height="117"/>
                                                 </imageView>
-                                                <wkWebView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kqy-rX-FVD">
-                                                    <rect key="frame" x="0.0" y="0.0" width="118" height="117"/>
-                                                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <wkWebViewConfiguration key="configuration">
-                                                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                                        <wkPreferences key="preferences"/>
-                                                    </wkWebViewConfiguration>
-                                                </wkWebView>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="OFx-7E-g6Y" secondAttribute="trailing" id="8If-Et-Xvc"/>
-                                            <constraint firstAttribute="bottom" secondItem="Kqy-rX-FVD" secondAttribute="bottom" id="HdC-zo-Re4"/>
-                                            <constraint firstAttribute="trailing" secondItem="Kqy-rX-FVD" secondAttribute="trailing" id="Mk6-nX-sZy"/>
-                                            <constraint firstItem="Kqy-rX-FVD" firstAttribute="top" secondItem="2Mi-rI-jKw" secondAttribute="top" id="T9c-10-Udv"/>
                                             <constraint firstItem="OFx-7E-g6Y" firstAttribute="leading" secondItem="2Mi-rI-jKw" secondAttribute="leading" id="Wbt-LU-ZVq"/>
                                             <constraint firstAttribute="bottom" secondItem="OFx-7E-g6Y" secondAttribute="bottom" id="h9W-5N-shZ"/>
-                                            <constraint firstItem="Kqy-rX-FVD" firstAttribute="leading" secondItem="2Mi-rI-jKw" secondAttribute="leading" id="llI-Sx-MO7"/>
                                             <constraint firstItem="OFx-7E-g6Y" firstAttribute="top" secondItem="2Mi-rI-jKw" secondAttribute="top" id="wq9-CU-dNt"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="gifImageView" destination="OFx-7E-g6Y" id="pKx-dg-PuC"/>
-                                            <outlet property="webView" destination="Kqy-rX-FVD" id="cDM-HI-g3z"/>
+                                            <outlet property="gifImageView" destination="OFx-7E-g6Y" id="B50-Dx-5IB"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

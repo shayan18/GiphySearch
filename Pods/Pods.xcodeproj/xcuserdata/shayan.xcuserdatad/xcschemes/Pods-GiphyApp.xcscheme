@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A7D0CEA7600B22C823EA96CE36E2F408"
+               BlueprintIdentifier = "E40976755B22245B8A6287FFDDF63F6A"
                BuildableName = "Pods_GiphyApp.framework"
                BlueprintName = "Pods-GiphyApp"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A7D0CEA7600B22C823EA96CE36E2F408"
+            BlueprintIdentifier = "E40976755B22245B8A6287FFDDF63F6A"
             BuildableName = "Pods_GiphyApp.framework"
             BlueprintName = "Pods-GiphyApp"
             ReferencedContainer = "container:Pods.xcodeproj">

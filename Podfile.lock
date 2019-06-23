@@ -1,24 +1,30 @@
 PODS:
   - Alamofire (4.8.2)
+  - FLAnimatedImage (1.0.12)
   - Moya (13.0.1):
     - Moya/Core (= 13.0.1)
   - Moya/Core (13.0.1):
     - Alamofire (~> 4.1)
     - Result (~> 4.1)
   - Result (4.1.0)
-  - SDWebImage (5.0.6):
-    - SDWebImage/Core (= 5.0.6)
-  - SDWebImage/Core (5.0.6)
+  - SDWebImage (4.4.7):
+    - SDWebImage/Core (= 4.4.7)
+  - SDWebImage/Core (4.4.7)
+  - SDWebImage/GIF (4.4.7):
+    - FLAnimatedImage (~> 1.0)
+    - SDWebImage/Core
   - SwiftyGif (5.0.1)
 
 DEPENDENCIES:
   - Moya (~> 13.0)
-  - SDWebImage (~> 5.0)
+  - SDWebImage (~> 4.0)
+  - SDWebImage/GIF (~> 4.0)
   - SwiftyGif (~> 5.0.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - FLAnimatedImage
     - Moya
     - Result
     - SDWebImage
@@ -26,11 +32,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
-  SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
+  SDWebImage: c10d14a8883ebd89664f02a422006f66a85c0c5d
   SwiftyGif: 3ca6760b21372f6b1844c0eb3957d7f49e2481ad
 
-PODFILE CHECKSUM: 86f4ea744058afe6db81b5076787aa2a4a8fd3db
+PODFILE CHECKSUM: 2cbb50676202bf204022fb9e25feb3c1aaa8da74
 
-COCOAPODS: 1.6.2
+COCOAPODS: 1.6.1

@@ -10,34 +10,32 @@ import UIKit
 class GiphyViewController: UIViewController {
     @IBOutlet weak private var searchBar: UISearchBar!
     @IBOutlet weak private var collectionView: UICollectionView!
-
 	private lazy var gifViewModel = GifViewModel(delegate: self)
 	private let gifDataSource = GiphyDataSource()
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.collectionView.dataSource = gifDataSource
+        self.collectionView.prefetchDataSource = self
 	}
-
-	private func fetchGifs(searchText: String) {
-		gifViewModel.getGifs(searchText: searchText, offset: Constants.offset, limit: Constants.limit)
-
-	}
-	
-
+    
 }
 
 extension GiphyViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
-	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-		let singleItemWidth = ((collectionView.frame.size.width)/2)-10
-		return CGSize(width: singleItemWidth, height: singleItemWidth)
+        let cellDimension = ((collectionView.frame.size.width)/2)-10
+        return CGSize(width: cellDimension, height: cellDimension)
+    }
 
-	}
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        if indexPath.item == gifViewModel.gifList.count-1 {
+            
+            gifViewModel.currentQuery = searchBar.text!
 
-	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-	}
+        }
+    }
 
 }
 
@@ -45,19 +43,46 @@ extension GiphyViewController: UICollectionViewDelegate, UICollectionViewDelegat
 
 extension GiphyViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-		fetchGifs(searchText: searchBar.text!)
+        gifViewModel.currentQuery = searchBar.text!
+
 	}
 }
 
 extension GiphyViewController: GifDelegate {
 	func gifsSuccess() {
-		guard let gifList = gifViewModel.gifList else {return}
-
-		gifDataSource.gifList = gifList
-		collectionView.reloadData()
+//        guard let gifList = gifViewModel.gifList else {return}
+        
+        gifDataSource.gifList = gifViewModel.gifList
+//        if gifViewModel.offset != 0 {
+//            countsRows()
+//
+//        }
+//        else {
+//            self.collectionView.reloadData()
+//        }
+		self.collectionView.reloadData()
 		self.view.endEditing(true)
 	}
 	func gifsFailure(errorMessage: String) {
 		print(errorMessage)
 	}
+}
+
+extension GiphyViewController: UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        let needsFetch = indexPaths.contains {
+            print($0.row)
+           return $0.row >= gifViewModel.gifList.count-1  }
+        
+        if needsFetch {
+        }
+//        if needsFetch {
+//            fetchNextPage()
+//        }
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
+        
+    }
 }
