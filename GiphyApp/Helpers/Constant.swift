@@ -10,8 +10,7 @@ import Foundation
 
 struct Constants {
 	static let apiKey = "JMLSmv9u9XHDOjERu7mPhIXVUlAlnJzv"
-	static let baseUrl = "http://api.giphy.com/v1/gifs/"
-	static let offset = 0
+	static let baseUrl = "https://api.giphy.com/v1/gifs/"
 	static let limit = 20
 }
 

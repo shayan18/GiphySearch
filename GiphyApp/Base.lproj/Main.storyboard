@@ -36,15 +36,15 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OFx-7E-g6Y" customClass="FLAnimatedImageView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="118" height="117"/>
+                                                    <rect key="frame" x="0.0" y="5" width="118" height="107"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="OFx-7E-g6Y" secondAttribute="trailing" id="8If-Et-Xvc"/>
                                             <constraint firstItem="OFx-7E-g6Y" firstAttribute="leading" secondItem="2Mi-rI-jKw" secondAttribute="leading" id="Wbt-LU-ZVq"/>
-                                            <constraint firstAttribute="bottom" secondItem="OFx-7E-g6Y" secondAttribute="bottom" id="h9W-5N-shZ"/>
-                                            <constraint firstItem="OFx-7E-g6Y" firstAttribute="top" secondItem="2Mi-rI-jKw" secondAttribute="top" id="wq9-CU-dNt"/>
+                                            <constraint firstAttribute="bottom" secondItem="OFx-7E-g6Y" secondAttribute="bottom" constant="5" id="h9W-5N-shZ"/>
+                                            <constraint firstItem="OFx-7E-g6Y" firstAttribute="top" secondItem="2Mi-rI-jKw" secondAttribute="top" constant="5" id="wq9-CU-dNt"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="gifImageView" destination="OFx-7E-g6Y" id="B50-Dx-5IB"/>
@@ -56,8 +56,11 @@
                                     <outlet property="delegate" destination="ysO-XK-Uyk" id="J6b-lv-c9W"/>
                                 </connections>
                             </collectionView>
-                            <searchBar contentMode="redraw" placeholder="Search" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ncW-sk-9a2">
+                            <searchBar contentMode="redraw" placeholder="Search" showsCancelButton="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncW-sk-9a2">
                                 <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
                                     <string>Title</string>
@@ -67,13 +70,23 @@
                                     <outlet property="delegate" destination="ysO-XK-Uyk" id="pvU-jo-9C8"/>
                                 </connections>
                             </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Gifs To Show" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FyZ-RG-YaA">
+                                <rect key="frame" x="10" y="353.5" width="355" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ncW-sk-9a2" firstAttribute="top" secondItem="wQ7-lE-0sf" secondAttribute="top" id="8KF-A1-m4F"/>
                             <constraint firstItem="wQ7-lE-0sf" firstAttribute="bottom" secondItem="Ls6-NG-7Rc" secondAttribute="bottom" constant="10" id="9cV-JL-4Nv"/>
+                            <constraint firstItem="wQ7-lE-0sf" firstAttribute="trailing" secondItem="FyZ-RG-YaA" secondAttribute="trailing" constant="10" id="CFU-Da-xzL"/>
+                            <constraint firstItem="FyZ-RG-YaA" firstAttribute="leading" secondItem="wQ7-lE-0sf" secondAttribute="leading" constant="10" id="Ddy-Mu-WLX"/>
                             <constraint firstItem="Ls6-NG-7Rc" firstAttribute="leading" secondItem="wQ7-lE-0sf" secondAttribute="leading" constant="10" id="GsM-iN-0jB"/>
+                            <constraint firstItem="FyZ-RG-YaA" firstAttribute="centerY" secondItem="wQ7-lE-0sf" secondAttribute="centerY" id="SjT-iT-wwY"/>
                             <constraint firstItem="Ls6-NG-7Rc" firstAttribute="top" secondItem="ncW-sk-9a2" secondAttribute="bottom" constant="10" id="UFq-a1-wbQ"/>
+                            <constraint firstItem="FyZ-RG-YaA" firstAttribute="centerX" secondItem="wQ7-lE-0sf" secondAttribute="centerX" id="XhA-ho-q6L"/>
                             <constraint firstAttribute="trailing" secondItem="ncW-sk-9a2" secondAttribute="trailing" id="cZ5-uD-bkR"/>
                             <constraint firstItem="ncW-sk-9a2" firstAttribute="leading" secondItem="wQ7-lE-0sf" secondAttribute="leading" id="gIg-iV-g0k"/>
                             <constraint firstItem="wQ7-lE-0sf" firstAttribute="trailing" secondItem="Ls6-NG-7Rc" secondAttribute="trailing" constant="10" id="wgk-q8-fxg"/>
@@ -83,6 +96,7 @@
                     <navigationItem key="navigationItem" title="Giphy Search" id="JqH-Nr-9VY"/>
                     <connections>
                         <outlet property="collectionView" destination="Ls6-NG-7Rc" id="pcc-pH-h5A"/>
+                        <outlet property="placeHolderLabel" destination="FyZ-RG-YaA" id="AgG-kX-WqZ"/>
                         <outlet property="searchBar" destination="ncW-sk-9a2" id="Xfr-pj-caK"/>
                     </connections>
                 </viewController>
@@ -98,7 +112,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KGd-QT-dNY">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>

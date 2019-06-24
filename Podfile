@@ -10,7 +10,6 @@ pod 'Moya', '~> 13.0'
 pod 'SDWebImage', '~> 4.0'
 pod 'SDWebImage/GIF', '~> 4.0'
 
-pod 'SwiftyGif', '~> 5.0.1'
   target 'GiphyAppTests' do
     inherit! :search_paths
     # Pods for testing

@@ -9,18 +9,19 @@
 import UIKit
 import WebKit
 import SDWebImage
-import SwiftyGif
 class GiphyCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak private  var gifImageView: FLAnimatedImageView!
 
 	func populateView(with url: String) {
 
 		guard let gifUrl = URL (string: url) else {return}
-    gifImageView.sd_setShowActivityIndicatorView(true)
-      gifImageView.sd_setIndicatorStyle(.gray)
-       DispatchQueue.main.async {
-        self.gifImageView.sd_setImage(with: gifUrl, placeholderImage: UIImage(named: ""))
-        }
+
+		self.gifImageView.setImage(with: gifUrl)
+//    gifImageView.sd_setShowActivityIndicatorView(true)
+//      gifImageView.sd_setIndicatorStyle(.gray)
+//       DispatchQueue.main.async {
+//        self.gifImageView.sd_setImage(with: gifUrl, placeholderImage: UIImage(named: ""))
+//        }
 	}
 	override func prepareForReuse() {
 		gifImageView.image = nil

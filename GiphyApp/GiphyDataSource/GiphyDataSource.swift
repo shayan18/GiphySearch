@@ -15,23 +15,13 @@ class GiphyDataSource: NSObject, UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		return gifList.count
 	}
-    
-    private func isLoadingIndexPath(_ indexPath: IndexPath) -> Bool {
-        return indexPath.row >= gifList.count
-    }
-    
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        if isLoadingIndexPath(indexPath) {
-//            return UICollectionViewCell()
-//        }
-//        else {
+
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifiers.giphyCell, for: indexPath) as? GiphyCollectionViewCell else {return UICollectionViewCell()}
             cell.populateView(with: gifList[indexPath.row].images?.downsized?.url ?? "")
             
             return cell
-       // }
-
 		
 	}
 	

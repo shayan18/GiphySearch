@@ -27,10 +27,7 @@ class GifViewModel {
 		Providers.gifProvider.request(.getGifs(searchText: searchText, offset: offset, limit: limit)) { [weak self] (moyaResponse) in
 			do {
 				let gifList: [GIF] = try moyaResponse.decoded()
-				//self?.gifList = gifList
-                
                 self?.gifList.append(contentsOf: gifList.map{$0})
-				//self?.gifList?.append(contentsOf: gifList)
 				self?.delegate?.gifsSuccess()
 
 			} catch {
@@ -38,10 +35,9 @@ class GifViewModel {
 			}
             
             self?.isLoadingData = false
-
-
 		}
 	}
+
     // setting previousQuery propery
     var previousQuery:String? {
         
@@ -69,17 +65,9 @@ class GifViewModel {
     func updateGifList(){
         // is loadingData true showing that server request still in process
         if isLoadingData{ return }
-        //if query is nil or empty searchMovies will use discoveryMovies route to get best movies
-        
-        if currentQuery == nil || currentQuery!.isEmpty{
-            
-            
-            
-        }
-        else{
+
             getGifs(searchText: currentQuery!, offset: offset, limit: Constants.limit)
-            
-        }
+
         //request in a way, set isLoadingData true
         self.isLoadingData = true
     }
